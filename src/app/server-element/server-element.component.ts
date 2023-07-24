@@ -7,6 +7,6 @@ import { Component , Input , ViewEncapsulation } from '@angular/core';
   encapsulation : ViewEncapsulation.Emulated   //None , Native 
 })
 export class ServerElementComponent {
-  @Input('ngElement') element :  {type : string, name : string, content : string} ;
-   
+  @Input('srvElement') element : {type :string , name: string , content : string }
+
 }
