@@ -10,7 +10,7 @@ export class AppComponent {
  
 
    onServerAdded(serverData : {serverName : string , serverContent : string}) {
-    this.serverElements.push({
+    this.serverElements.push({ 
       type: 'server',
       name: serverData.serverName,
       content: serverData.serverContent,
@@ -25,5 +25,9 @@ export class AppComponent {
     });
   }
 
+
+  onChangeFirst(){
+    this.serverElements[0].name = 'Changed!' ;
+  }
 
 }
