@@ -1,13 +1,27 @@
-<div class="row">
-  <div class="col-xs-12">
-    <app-game-control (interValFired)="onIntervalFired($event)"></app-game-control>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
-    <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div  *ngIf="onlyOdd">
+          <li
+          class="list-group-item"  *ngFor="let odd of oddNumbers"> {{odd}}
+        </li>
+        </div>
+         <div  *ngIf="!onlyOdd">
+          <li
+          class="list-group-item"  *ngFor="let even of evenNumbers"> {{even}}
+        </li> 
+         </div>
+      </ul>
+      <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template>
+    </div>
+    <p appBasicHighlight>Style me directive</p>
   </div>
 </div>
 
